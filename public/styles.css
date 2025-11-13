@@ -36,7 +36,7 @@ body {
 
 /* Header */
 .header {
-    background: var(--gradient);
+    background: var(--primary-color);
     box-shadow: var(--shadow-lg);
     position: sticky;
     top: 0;
