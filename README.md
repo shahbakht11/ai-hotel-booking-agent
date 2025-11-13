@@ -1,5 +1,7 @@
 # 🏨 Hotel Booking Website
 
+End-to-end AI hotel booking system with real-time room availability, dynamic pricing, and WhatsApp booking confirmation.
+
 A modern, fully functional hotel booking website with search, filtering, and reservation features.
 
 ## ✨ Features
@@ -54,6 +56,8 @@ hotel-booking-website/
 - `GET /api/hotels/:id` - Get a specific hotel by ID
 - `POST /api/bookings` - Create a new booking
 - `GET /api/bookings` - Get all bookings
+- `POST /api/vapi/initiate-call` - Initiate a call through Vapi AI agent
+- `GET /api/vapi/call-status/:callId` - Check status of a Vapi-initiated call
 
 ## 🏨 Available Hotels
 
@@ -71,12 +75,14 @@ hotel-booking-website/
 3. **Book a Hotel**: Click "Book Now" on any hotel card
 4. **Complete Booking**: Fill in your details, select dates, and confirm
 5. **View Bookings**: Navigate to "My Bookings" section to see all your reservations
+6. **Call Support**: Click "Call Support" to have the Vapi AI agent call you back instantly
 
 ## 🔧 Technologies Used
 
 - **Backend**: Node.js, Express.js
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
 - **Styling**: Modern CSS with Flexbox and Grid
+- **AI Integration**: Vapi AI agent for conversational booking support and callback initiation
 
 ## 📝 Notes
 
@@ -92,6 +98,7 @@ If you encounter any issues:
 2. Delete `node_modules` and `package-lock.json`, then run `npm install` again
 3. Check that port 3000 is not already in use
 4. Ensure all files are in the correct directories
+5. Verify environment variables are set for Vapi integration (`VAPI_API_KEY`, `VAPI_AGENT_ID`, optional `VAPI_WEBHOOK_SECRET`)
 
 ## 📄 License
 
@@ -100,4 +107,3 @@ This project is open source and available for personal and commercial use.
 ---
 
 **Enjoy booking your perfect stay! 🎉**
-
