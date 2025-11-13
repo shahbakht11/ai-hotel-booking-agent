@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Hotel Booking</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🏨</span>
+                <a href="/" class="logo-text">HotelBooking</a>
+            </div>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/hotels.html">Hotels</a>
+                <a href="/bookings.html" class="active">My Bookings</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Bookings</h1>
+            <p>View all your confirmed reservations</p>
+        </div>
+    </section>
+
+    <!-- Bookings Section -->
+    <section class="bookings-section">
+        <div class="container">
+            <div id="bookingsContainer" class="bookings-list">
+                <!-- Bookings will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 HotelBooking. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+        // Load bookings on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadBookings();
+        });
+    </script>
+</body>
+</html>
+

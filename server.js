@@ -105,6 +105,19 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Serve other HTML pages
+app.get('/hotels.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'hotels.html'));
+});
+
+app.get('/bookings.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'bookings.html'));
+});
+
+app.get('/contact.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
+
 // API: Get all hotels
 app.get('/api/hotels', (req, res) => {
   const { location, minPrice, maxPrice, minRating } = req.query;
