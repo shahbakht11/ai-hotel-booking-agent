@@ -55,11 +55,32 @@ document.getElementById('guests')?.addEventListener('change', calculateTotalPric
 async function loadHotels() {
     try {
         const response = await fetch('/api/hotels');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         allHotels = await response.json();
-        displayHotels(allHotels);
+        if (allHotels && allHotels.length > 0) {
+            displayHotels(allHotels);
+        } else {
+            console.warn('No hotels returned from API');
+            document.getElementById('hotelsContainer').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">🏨</div>
+                    <h3>No hotels available</h3>
+                    <p>Please try again later</p>
+                </div>
+            `;
+        }
     } catch (error) {
         console.error('Error loading hotels:', error);
-        showError('Failed to load hotels. Please try again.');
+        document.getElementById('hotelsContainer').innerHTML = `
+            <div class="empty-state">
+                <div class="empty-state-icon">⚠️</div>
+                <h3>Error loading hotels</h3>
+                <p>${error.message}</p>
+                <button onclick="loadHotels()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Retry</button>
+            </div>
+        `;
     }
 }
 

@@ -17,7 +17,10 @@ const IS_VERCEL = Boolean(process.env.VERCEL);
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+
+// Serve static files - handle both local and Vercel paths
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 
 // CORS middleware for Vapi integration
 app.use((req, res, next) => {
