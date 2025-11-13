@@ -6,6 +6,8 @@
   ],
   "routes": [
     { "src": "/api/webhook", "dest": "/api/webhook.js" },
+    { "src": "/api/(.*)", "dest": "/api/index.js" },
     { "src": "/(.*)", "dest": "/api/index.js" }
-  ]
+  ],
+  "public": true
 }
